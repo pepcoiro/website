@@ -1,72 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Articolo di Giuseppe Coiro.">
-    <title>Articolo — Giuseppe Coiro</title>
-    <link rel="stylesheet" href="../style.css">
-    <script src="../script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articolo — Giuseppe Coiro</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js" defer></script>
 </head>
-
 <body>
-    <site-header></site-header>
-
-    <main class="contenuto">
-        <h2 id="titolo-articolo">Caricamento articolo…</h2>
-        <div class="spazio"></div>
-        <article id="contenuto-articolo"></article>
-    </main>
-
-    <site-footer></site-footer>
-
-    <script>
-        (async function () {
-            const params = new URLSearchParams(window.location.search);
-            const file = params.get("file");
-            const titolo = document.getElementById("titolo-articolo");
-            const contenuto = document.getElementById("contenuto-articolo");
-
-            // Accetta solo nomi di file .md semplici, senza percorsi.
-            if (!file || !/^[a-z0-9-]+\.md$/i.test(file)) {
-                titolo.textContent = "Articolo non trovato";
-                contenuto.textContent = "Il collegamento all'articolo non è valido.";
-                return;
-            }
-
-            try {
-                const response = await fetch("./" + file);
-                if (!response.ok) throw new Error("Articolo non trovato");
-
-                const markdown = await response.text();
-                const righe = markdown.replace(/^\uFEFF/, "").split(/\r?\n/);
-                let indiceTitolo = righe.findIndex(riga => /^#\s+/.test(riga.trim()));
-                let titoloArticolo = "Articolo";
-                if (indiceTitolo !== -1) {
-                    titoloArticolo = righe[indiceTitolo].trim().replace(/^#\s+/, "").trim();
-                    righe.splice(indiceTitolo, 1);
-                }
-
-                titolo.textContent = titoloArticolo;
-                document.title = titoloArticolo + " — Giuseppe Coiro";
-                document.querySelector('meta[name="description"]').setAttribute(
-                    "content",
-                    titoloArticolo + " — articolo di Giuseppe Coiro."
-                );
-
-                if (window.marked) {
-                    contenuto.innerHTML = window.marked.parse(righe.join("\n"));
-                } else {
-                    contenuto.textContent = righe.join("\n");
-                }
-            } catch (error) {
-                titolo.textContent = "Articolo non disponibile";
-                contenuto.textContent = "Non è stato possibile caricare l'articolo. Verifica che il file Markdown esista.";
-            }
-        })();
-    </script>
+  <site-header></site-header>
+  <main class="contenuto">
+    <h2 id="titolo-articolo"></h2>
+    <div class="spazio"></div>
+    <article id="contenuto-articolo"></article>
+  </main>
+  <site-footer></site-footer>
 </body>
-
 </html>
