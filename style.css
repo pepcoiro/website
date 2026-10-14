@@ -56,18 +56,20 @@ header {
   align-items: center;
 }
 
-h1 {
-  font-family: Baskerville, sans-serif;
-  margin: 0;
-  font-size: 30px;
+h1,
+h2 {
+  font-family: "Segoe UI", sans-serif;
   font-weight: 600;
 }
 
+h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
 h2 {
-  font-family: Baskerville, sans-serif;
   margin: 0;
   font-size: 24px;
-  font-weight: 600;
 }
 
 p {
