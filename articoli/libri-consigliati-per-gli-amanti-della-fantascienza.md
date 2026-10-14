@@ -2,8 +2,8 @@ La fantascienza è molto più di astronavi e mondi lontani: attraverso futuri po
 
 ### Philip K. Dick
 
-- **Ma gli androidi sognano pecore elettriche?** — Il romanzo che ha ispirato *Blade Runner*, tra identità, empatia e confine tra umano e artificiale.
-- **La svastica sul sole** — Una storia ucronica in cui le potenze dell'Asse hanno vinto la Seconda guerra mondiale.
+- **Anche gli androidi sognano pecore elettriche** — Il romanzo che ha ispirato *Blade Runner*, tra identità, empatia e confine tra umano e artificiale.
+- **L'uomo nell'alto castello** — Una storia ucronica in cui le potenze dell'Asse hanno vinto la Seconda guerra mondiale.
 - **Ubik** — Un viaggio destabilizzante tra realtà, percezione e tempo, tipico dell'immaginazione visionaria di Dick.
 
 ### Isaac Asimov
