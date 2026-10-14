@@ -87,7 +87,7 @@ async function caricaArticolo() {
     .replace(/\.md$/i, '')
     .replace(/-/g, ' ');
   titolo.textContent = titoloArticolo.charAt(0).toUpperCase() + titoloArticolo.slice(1);
-  document.title = titolo.textContent + ' - Giuseppe Coiro';
+  document.title = titolo.textContent + ' / Giuseppe Coiro';
 
   try {
     const risposta = await fetch(nomeFile);
