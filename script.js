@@ -50,7 +50,7 @@ class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <header>
-        <h1><a href="index.html">Giuseppe Coiro</a></h1>
+        <h1><a href="/" aria-label="Homepage">Giuseppe Coiro</a></h1>
         <button id="theme" role="switch" aria-label="Cambia tema" aria-checked="${isDarkMode()}">
         </button>
       </header>
