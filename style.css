@@ -158,7 +158,7 @@ footer {
 
 footer p,
 footer a {
-  font-family: Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 14px;
   margin: 0;
   opacity: .7;
@@ -188,7 +188,7 @@ footer a:hover {
   border-radius: 99px;
   background: transparent;
   color: var(--fg);
-  font-family: Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 15px;
   cursor: pointer;
   transition: background .2s, color .2s, opacity .2s;
