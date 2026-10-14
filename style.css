@@ -276,3 +276,10 @@ footer a:hover {
     font-size: 12px;
   }
 }
+
+h3 {
+  margin: 0 0 16px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+}
