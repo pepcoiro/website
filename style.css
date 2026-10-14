@@ -145,7 +145,7 @@ a:hover {
 
 footer {
   max-width: 600px;
-  margin: 60px auto 0;
+  margin: 60px auto 30px;
   display: flex;
   flex-direction: column;
   gap: 6px;
