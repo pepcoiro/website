@@ -83,14 +83,18 @@ async function caricaArticolo() {
   const nomeFile = new URLSearchParams(window.location.search).get('file');
   if (!nomeFile) return;
 
-  const titoloArticolo = nomeFile
-    .replace(/\.md$/i, '')
-    .replace(/-/g, ' ');
-  titolo.textContent = titoloArticolo.charAt(0).toUpperCase() + titoloArticolo.slice(1);
+  if (nomeFile === 'libri-consigliati-per-gli-amanti-della-fantascienza') {
+    titolo.textContent = 'Lo scopo ultimo di ogni essere vivente è diventare grande quanto i propri sogni';
+  } else {
+    const titoloArticolo = nomeFile
+      .replace(/\.md$/i, '')
+      .replace(/-/g, ' ');
+    titolo.textContent = titoloArticolo.charAt(0).toUpperCase() + titoloArticolo.slice(1);
+  }
   document.title = titolo.textContent + ' / Giuseppe Coiro';
 
   try {
-    const risposta = await fetch(nomeFile);
+    const risposta = await fetch(nomeFile.endsWith('.md') ? nomeFile : nomeFile + '.md');
     const markdown = await risposta.text();
     await loadMarkdownLibrary();
     contenuto.innerHTML = marked.parse(markdown);
