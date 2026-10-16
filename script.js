@@ -80,12 +80,12 @@ async function caricaArticolo() {
   const titolo = document.querySelector('#titolo-articolo');
   if (!contenuto || !titolo) return;
 
-  const nomeFile = new URLSearchParams(window.location.search).get('file');
+  const nomeFile = contenuto.dataset.file || new URLSearchParams(window.location.search).get('file');
   if (!nomeFile) return;
 
-  const titoloArticolo = nomeFile.replace(/\.md$/i, '');
+  const titoloArticolo = document.querySelector('meta[property="og:title"]')?.content || nomeFile.replace(/\.md$/i, '');
   titolo.textContent = titoloArticolo;
-  document.title = titolo.textContent + ' / Giuseppe Coiro';
+  if (!document.querySelector('meta[property="og:title"]')) document.title = titoloArticolo + ' / Giuseppe Coiro';
 
   try {
     const risposta = await fetch(nomeFile.endsWith('.md') ? nomeFile : nomeFile + '.md');
