@@ -84,12 +84,16 @@ p {
   margin: 0 0 16px;
 }
 
-data {
+.data-articolo {
   font-family: "system-ui", sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.8;
   margin: 0 0 16px;
+}
+
+.spazio-data {
+  height: 15px;
 }
 
 #theme {
