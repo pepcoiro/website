@@ -1,3 +1,8 @@
+---
+title: "Lo scopo ultimo di ogni essere vivente è diventare grande quanto i propri sogni"
+description: "Libri di fantascienza per esplorare l’evoluzione tecnologica e scientifica e comprendere meglio il mondo in cui viviamo."
+---
+
 Le più grandi invenzioni della storia derivano dai sogni di qualcuno: ciò che un tempo era fantascienza, con il passare degli anni diventa semplicemente scienza. Di seguito trovi un elenco di libri che ho letto e che consiglio a chiunque voglia comprendere meglio l’evoluzione tecnologica e scientifica degli anni passati, per arrivare a capire meglio anche il mondo in cui viviamo oggi.
 
 - Hyperion - Dan Simmons
