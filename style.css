@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700");
 
 html {
   scrollbar-gutter: stable;
@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 36px 24px;
   background: var(--bg);
@@ -64,7 +64,7 @@ header {
 }
 
 h1, h2, h3 {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
 }
 
@@ -84,7 +84,7 @@ h3 {
 }
 
 p {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.8;
@@ -93,7 +93,7 @@ p {
 
 .data-articolo {
   color: var(--muted);
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.8;
@@ -146,7 +146,7 @@ p {
 }
 
 li {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.8;
@@ -178,7 +178,7 @@ footer {
 
 footer p,
 footer a {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   margin: 0;
   opacity: .7;
@@ -208,7 +208,7 @@ footer a:hover {
   border-radius: 99px;
   background: transparent;
   color: var(--fg);
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   cursor: pointer;
   transition: background .2s, color .2s, opacity .2s;
