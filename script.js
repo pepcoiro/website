@@ -65,41 +65,7 @@ class SiteFooter extends HTMLElement {
 customElements.define('site-header', SiteHeader);
 customElements.define('site-footer', SiteFooter);
 
-function loadMarkdownLibrary() {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-
-async function caricaArticolo() {
-  const contenuto = document.querySelector('#contenuto-articolo');
-  const titolo = document.querySelector('#titolo-articolo');
-  if (!contenuto || !titolo) return;
-
-  const nomeFile = contenuto.dataset.file || new URLSearchParams(window.location.search).get('file');
-  if (!nomeFile) return;
-
-  const titoloArticolo = document.querySelector('meta[property="og:title"]')?.content || nomeFile.replace(/\.md$/i, '');
-  titolo.textContent = titoloArticolo;
-  if (!document.querySelector('meta[property="og:title"]')) document.title = titoloArticolo + ' / Giuseppe Coiro';
-
-  try {
-    const risposta = await fetch(nomeFile.endsWith('.md') ? nomeFile : nomeFile + '.md');
-    const markdown = await risposta.text();
-    await loadMarkdownLibrary();
-    contenuto.innerHTML = marked.parse(markdown);
-  } catch {
-    contenuto.textContent = 'Impossibile caricare l’articolo.';
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  caricaArticolo();
-
   const galleria = document.querySelector('.galleria');
   if (!galleria) return;
 
