@@ -84,6 +84,14 @@ p {
   margin: 0 0 16px;
 }
 
+data {
+  font-family: "system-ui", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
 #theme {
   width: 40px;
   height: 21px;
