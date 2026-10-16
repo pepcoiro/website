@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
 html {
   scrollbar-gutter: stable;
 }
@@ -6,6 +8,7 @@ html {
   color-scheme: light;
   --bg: #f2f1ee;
   --fg: #292929;
+  --muted: #777777;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +16,7 @@ html {
     color-scheme: dark;
     --bg: #202020;
     --fg: #e5e5e2;
+    --muted: #a0a09d;
   }
 }
 
@@ -20,12 +24,14 @@ html {
   color-scheme: dark;
   --bg: #202020;
   --fg: #e5e5e2;
+  --muted: #a0a09d;
 }
 
 :root.light {
   color-scheme: light;
   --bg: #f2f1ee;
   --fg: #292929;
+  --muted: #777777;
 }
 
 * {
@@ -33,6 +39,7 @@ html {
 }
 
 body {
+  font-family: "Josefin Sans", sans-serif;
   margin: 0;
   padding: 36px 24px;
   background: var(--bg);
@@ -57,7 +64,7 @@ header {
 }
 
 h1, h2, h3 {
-  font-family: "system-ui", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
 }
 
@@ -77,7 +84,7 @@ h3 {
 }
 
 p {
-  font-family: "system-ui", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.8;
@@ -85,7 +92,8 @@ p {
 }
 
 .data-articolo {
-  font-family: "system-ui", sans-serif;
+  color: var(--muted);
+  font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.8;
@@ -138,7 +146,7 @@ p {
 }
 
 li {
-  font-family: "system-ui", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.8;
@@ -170,7 +178,7 @@ footer {
 
 footer p,
 footer a {
-  font-family: "system-ui", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
   margin: 0;
   opacity: .7;
@@ -200,7 +208,7 @@ footer a:hover {
   border-radius: 99px;
   background: transparent;
   color: var(--fg);
-  font-family: "system-ui", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   cursor: pointer;
   transition: background .2s, color .2s, opacity .2s;
