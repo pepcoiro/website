@@ -14,7 +14,7 @@ html {
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     color-scheme: dark;
-    --bg: #171717;
+    --bg: #161616;
     --fg: #e5e5e2;
     --muted: #a0a09d;
   }
@@ -22,7 +22,7 @@ html {
 
 :root.dark {
   color-scheme: dark;
-  --bg: #171717;
+  --bg: #161616;
   --fg: #e5e5e2;
   --muted: #a0a09d;
 }
