@@ -1,54 +1,10 @@
-const root = document.documentElement;
-const savedTheme = sessionStorage.getItem('theme');
-if (savedTheme) root.classList.add(savedTheme);
-
-const system = matchMedia('(prefers-color-scheme: dark)');
-
-function isDarkMode() {
-  const manual = sessionStorage.getItem('theme');
-  if (manual === 'dark') return true;
-  if (manual === 'light') return false;
-  return system.matches;
-}
-
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    root.classList.add('dark');
-    root.classList.remove('light');
-  } else if (theme === 'light') {
-    root.classList.add('light');
-    root.classList.remove('dark');
-  } else {
-    root.classList.remove('dark', 'light');
-  }
-  const toggle = document.querySelector('#theme');
-  if (toggle) toggle.setAttribute('aria-checked', String(isDarkMode()));
-}
-
-system.addEventListener('change', () => {
-  if (sessionStorage.getItem('theme') === null) applyTheme(null);
-});
-
-function setupThemeToggle(btn) {
-  if (!btn) return;
-  btn.setAttribute('aria-checked', String(isDarkMode()));
-  btn.onclick = () => {
-    document.body.classList.add('theme-transition');
-    const nextTheme = isDarkMode() ? 'light' : 'dark';
-    try { sessionStorage.setItem('theme', nextTheme); } catch (e) {}
-    applyTheme(nextTheme);
-  };
-}
-
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <header>
         <h1><a href="/website/" aria-label="Homepage">Giuseppe Coiro</a></h1>
-        <button id="theme" role="switch" aria-label="Cambia tema" aria-checked="${isDarkMode()}"></button>
       </header>
     `;
-    setupThemeToggle(this.querySelector('#theme'));
   }
 }
 class SiteFooter extends HTMLElement {
