@@ -65,6 +65,8 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = `
       <footer>
         <a href="mailto:giuseppecoiro@proton.me" target="_blank" rel="noopener noreferrer">giuseppecoiro@proton.me</a>
+        <span>Ethereum address: <a href="https://etherscan.io/address/0xa0A8A49274fD9c00b2ebbefF4C0C7A7739f455E" target="_blank" rel="noopener noreferrer">0xa0A8A49274fD9c00b2ebbefF4C0C7A7739f455E</a></span>
+        <span>Solana address: <a href="https://solscan.io/account/LHFSGWbWQcJZTdxM7QFKkJ4Bq6ygUay7kJaGPQUUopT" target="_blank" rel="noopener noreferrer">LHFSGWbWQcJZTdxM7QFKkJ4Bq6ygUay7kJaGPQUUopT</a></span>
         <a href="https://www.linkedin.com/in/giuseppe-coiro-827b79420/" target="_blank" rel="noopener noreferrer">Collegati su LinkedIn</a>
         <a href="https://www.chess.com/member/martin_sileno" target="_blank" rel="noopener noreferrer">Giochiamo a scacchi</a>
       </footer>
