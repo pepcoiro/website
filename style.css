@@ -105,22 +105,25 @@ p {
 }
 
 #theme {
-  width: 40px;
-  height: 21px;
-  padding: 4px;
+  width: 44px;
+  height: 28px;
+  min-width: 44px;
+  padding: 5px;
   border: 0;
   border-radius: 99px;
   background: var(--fg);
   cursor: pointer;
   display: flex;
   align-items: center;
+  flex: 0 0 44px;
+  touch-action: manipulation;
 }
 
 #theme::before {
   content: "";
-  width: 15px;
-  height: 15px;
-  flex: 0 0 15px;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
   border-radius: 50%;
   background: var(--bg);
   transition: transform .22s ease;
@@ -128,12 +131,12 @@ p {
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) #theme::before {
-    transform: translateX(17px) scale(1.07);
+    transform: translateX(16px) scale(1.03);
   }
 }
 
 :root.dark #theme::before {
-  transform: translateX(17px) scale(1.07);
+  transform: translateX(16px) scale(1.03);
 }
 
 :root.light #theme::before {
