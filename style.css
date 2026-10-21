@@ -5,10 +5,33 @@ html {
 }
 
 :root {
+  color-scheme: light;
+  --bg: #f2f1ee;
+  --fg: #292929;
+  --muted: #777777;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --bg: #161616;
+    --fg: #e5e5e2;
+    --muted: #a0a09d;
+  }
+}
+
+:root.dark {
   color-scheme: dark;
   --bg: #161616;
   --fg: #e5e5e2;
   --muted: #a0a09d;
+}
+
+:root.light {
+  color-scheme: light;
+  --bg: #f2f1ee;
+  --fg: #292929;
+  --muted: #777777;
 }
 
 * {
@@ -21,6 +44,10 @@ body {
   padding: 36px 24px;
   background: var(--bg);
   color: var(--fg);
+}
+
+body.theme-transition {
+  transition: background .2s, color .2s;
 }
 
 site-header,
@@ -75,6 +102,42 @@ p {
 
 .spazio-data {
   height: 15px;
+}
+
+#theme {
+  width: 40px;
+  height: 21px;
+  padding: 4px;
+  border: 0;
+  border-radius: 99px;
+  background: var(--fg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#theme::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  transition: transform .22s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) #theme::before {
+    transform: translateX(16px) scale(1.03);
+  }
+}
+
+:root.dark #theme::before {
+  transform: translateX(16px) scale(1.03);
+}
+
+:root.light #theme::before {
+  transform: translateX(0) scale(1);
 }
 
 .contenuto {
