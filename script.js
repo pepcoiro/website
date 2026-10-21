@@ -1,11 +1,20 @@
 const root = document.documentElement;
-const savedTheme = sessionStorage.getItem('theme');
-if (savedTheme) root.classList.add(savedTheme);
-
 const system = matchMedia('(prefers-color-scheme: dark)');
 
+function getSavedTheme() {
+  try {
+    const theme = localStorage.getItem('theme');
+    return theme === 'dark' || theme === 'light' ? theme : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+const savedTheme = getSavedTheme();
+if (savedTheme) root.classList.add(savedTheme);
+
 function isDarkMode() {
-  const manual = sessionStorage.getItem('theme');
+  const manual = getSavedTheme();
   if (manual === 'dark') return true;
   if (manual === 'light') return false;
   return system.matches;
@@ -26,7 +35,7 @@ function applyTheme(theme) {
 }
 
 system.addEventListener('change', () => {
-  if (sessionStorage.getItem('theme') === null) applyTheme(null);
+  if (getSavedTheme() === null) applyTheme(null);
 });
 
 function setupThemeToggle(btn) {
@@ -35,7 +44,7 @@ function setupThemeToggle(btn) {
   btn.onclick = () => {
     document.body.classList.add('theme-transition');
     const nextTheme = isDarkMode() ? 'light' : 'dark';
-    try { sessionStorage.setItem('theme', nextTheme); } catch (e) {}
+    try { localStorage.setItem('theme', nextTheme); } catch (e) {}
     applyTheme(nextTheme);
   };
 }
